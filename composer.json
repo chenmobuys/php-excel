@@ -1,7 +1,8 @@
 {
     "name": "chen/php-excel",
+    "description": "A excel library.",
     "type": "library",
-    "license": "GPL",
+    "license": "MIT",
     "authors": [
         {
             "name": "Chenmobuys",
