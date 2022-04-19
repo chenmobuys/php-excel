@@ -1,4 +1,4 @@
-## ChenExcel
+## PHPExcel
 
 [![Build Status](https://github.com/chenmobuys/php-excel/workflows/master/badge.svg)](https://github.com/chenmobuys/php-excel/actions)
 [![Latest Stable Version](https://img.shields.io/packagist/v/chen/php-excel.svg)](https://packagist.org/packages/chen/php-excel) 
