@@ -164,7 +164,7 @@ class Csv extends BaseReader
      * @param int|null $endRow
      * @return \Excel\Reader\BaseRowIterator
      */
-    protected function getRowIterator(array $worksheetInfo, $worksheetIndex, int $startRow = 1, int $endRow = null): BaseRowIterator
+    protected function getRowIterator(array $worksheetInfo,int $worksheetIndex, int $startRow = 1, int $endRow = null): BaseRowIterator
     {
         $this->splFileObject->rewind();
         $style = $this->getStyle();
