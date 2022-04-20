@@ -92,7 +92,8 @@ class Ods extends BaseReader
 
         $content = $zip->getFromName('content.xml');
         /** @var XMLReader $xml */
-        $xml = XMLReader::XML($content);
+        $xml = new XMLReader();
+        $xml->XML($content);
         while ($xml->read()) {
             if ($xml->name == 'table:table') {
                 $worksheetNames[] = $xml->getAttribute('table:name');
@@ -117,7 +118,8 @@ class Ods extends BaseReader
 
         $content = $zip->getFromName('content.xml');
         /** @var XMLReader $xml */
-        $xml = XMLReader::XML($content);
+        $xml = new XMLReader();
+        $xml->XML($content);
         $worksheetIndex = 0;
         $emptyCellCount = 0;
         $tmpInfo = null;
@@ -190,7 +192,8 @@ class Ods extends BaseReader
     {
         $worksheetXml = $this->zip->getFromName('content.xml');
         /** @var XMLReader */
-        $worksheetXmlReader = XMLReader::XML($worksheetXml);
+        $worksheetXmlReader = new XMLReader();
+        $worksheetXmlReader->XML($worksheetXml);
         $style = $this->getStyle();
 
         return new RowIterator($worksheetXmlReader, $style, $worksheetIndex, $startRow, $endRow);

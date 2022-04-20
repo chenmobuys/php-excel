@@ -204,7 +204,8 @@ class Xlsx extends BaseReader
                 ];
 
                 /** @var XMLReader $xml */
-                $xml = XMLReader::XML(
+                $xml = new XMLReader();
+                $xml->XML(
                     $zip->getFromName($worksheetPath),
                     Settings::getLibXmlLoaderOptions()
                 );
@@ -256,7 +257,8 @@ class Xlsx extends BaseReader
     {
         $worksheetXml = $this->zip->getFromName($this->worksheetPaths[$worksheetIndex]);
         /** @var XMLReader $worksheetXmlReader */
-        $worksheetXmlReader = XMLReader::XML($worksheetXml);
+        $worksheetXmlReader = new XMLReader();
+        $worksheetXmlReader->XML($worksheetXml);
         $style = $this->getStyle();
 
         return new RowIterator($worksheetXmlReader, $style, $worksheetIndex, $startRow, $endRow);
@@ -359,7 +361,8 @@ class Xlsx extends BaseReader
         }
 
         /** @var XMLReader */
-        $sharedStrings = XMLReader::XML($sharedStringsXml);
+        $sharedStrings = new XMLReader();
+        $sharedStrings->XML($sharedStringsXml);
         $sharedStringsCount = 0;
 
         while ($sharedStrings->read()) {
